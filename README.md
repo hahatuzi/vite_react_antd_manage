@@ -1,0 +1,2 @@
+# vite_react_antd_manage
+使用vite搭建的基于vue-element-admin-manage项目参考的react后台管理系统项目模板
