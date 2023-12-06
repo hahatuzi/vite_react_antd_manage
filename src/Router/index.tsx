@@ -1,19 +1,15 @@
-import Login from '@/views/login/index'
-import Home from '@/views/Home/index'
-import User from '@/views/User/index'
-import MainMenu from '@/Layot/index'
+import MainLayout from "@/layout"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 
-const GetRouters = () => {
-  const routes:RouteObject[] = useRoutes([
-    {
-      path:'/layout',
-      element:<MainMenu></MainMenu>,
-      children:[
-        {path:'user', element:<User></User>, index:true},
-        {path:'home', element:<Home></Home>},
-      ]
-    }
-  ])
-  return routes
+
+const BaseRouter = () => {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<MainLayout/>}>
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  )
 }
-export default GetRouters
+export default BaseRouter
