@@ -6,10 +6,32 @@
     text-align: center;
     color: #fff;
     border-bottom: 1px solid #fff;
-    background-color:#5AA7A7;
-    box-shadow: 0 0 10px #5AA7A7;
+    background-color:#01a79a;
+    // background-color:#5AA7A7;01a79a
+    box-shadow: 0 0 10px #01a79a;
     font-family: HYZY;
     font-size: 28px;
-    text-shadow: 0 0 3px #96D7c6;
+    text-shadow: 0 0 3px #01c1b2;
   }
+  .menu_container{
+    height: 100%;
+    overflow-y: scroll;
+
+    :global{
+      .ant-menu-submenu-selected{
+        .ant-menu-submenu-title{
+        color: #fff;
+        }
+      }
+      .ant-menu-item-selected{
+        color: #01a79a;
+      }
+      .ant-menu-item:not(.ant-menu-item-selected):hover{
+        color: #fff;
+      }
+  }
+  }
+}
+::-webkit-scrollbar{
+  display: none;
 }
