@@ -26,9 +26,9 @@ const routes = [
     path:"/",
     element:<MainLayout></MainLayout>,
     children:[
-      { path:"/home",element:withLoadingComponent(<Home></Home>) },
-      { path:"/system/menu",element:withLoadingComponent(<MenuManage></MenuManage>) },
-      { path:"/system/user",element:withLoadingComponent(<UserManage></UserManage>) },
+      { path:"/home",name:"首页",element:withLoadingComponent(<Home></Home>) },
+      { path:"/system/menu",name:"菜单管理",element:withLoadingComponent(<MenuManage></MenuManage>) },
+      { path:"/system/user",name:"用户管理",element:withLoadingComponent(<UserManage></UserManage>) },
     ]
   }
 ]
