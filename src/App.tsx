@@ -1,6 +1,8 @@
 import './App.scss'
-import { useRoutes } from 'react-router-dom'
+import { Routes,Route, useRoutes, Navigate } from 'react-router-dom'
 // import {useNavigate, useRoutes,useLocation } from 'react-router-dom'
+// import {constantRoutes} from './router/index'
+// import routes from './router/config'
 import routes from './router/index'
 // import { message } from 'antd'
 

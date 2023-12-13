@@ -1,8 +1,7 @@
 import React from 'react'
 import { Menu} from 'antd'
-import type { MenuProps } from 'antd'
-import { LaptopOutlined, NotificationOutlined, UserOutlined } from '@ant-design/icons'
-
+import {asyncRoutes} from '@/router/index'
+import { useNavigate } from 'react-router-dom'
 const menuStyle:React.CSSProperties = {
   height:"100%",
   borderRight: 0,
@@ -10,29 +9,50 @@ const menuStyle:React.CSSProperties = {
   color:'#fff',
   fontSize:'15px',
 }
-const items2: MenuProps['items'] = [UserOutlined, LaptopOutlined, NotificationOutlined].map(
-  (icon, index) => {
-    const key = String(index + 1);
-    return {
-      key: `sub${key}`,
-      icon: React.createElement(icon),
-      label: `subnav ${key}`,
 
-      children: new Array(4).fill(null).map((_, j) => {
-        const subKey = index * 4 + j + 1;
-        return {
-          key: subKey,
-          label: `option${subKey}`,
-        };
-      }),
-    };
-  },
-);
+type node = {
+  name:'',
+  icon:React.Component,
+  label:'',
+  path:'',
+  meta:{icon:string, title:string},
+  children:Array<object>
+}
+const getMenuTree = function (arr:Array<node>):Array<object> {
+  if (!arr || arr.length === 0) return []
+  const res = arr.map(item => {
+    let obj = {}
+    if (!item.meta) {
+      // 单级路由
+      obj = {
+        key:item.children[0].path,
+        icon:  React.createElement(item.children[0].meta.icon),
+        label: item.children[0].label,
+      }
+    } else {
+      obj = {
+        key: item.path,
+        icon: item.meta && React.createElement(item.meta.icon),
+        label: item.label,
+      }
+      if (item.children && item.children.length !== 0) {
+        obj.children = getMenuTree(item.children)
+      }
+    }
+    return obj
+  })
+  return res
+}
 
 const SiderMenu = function () {
+  const navigate = useNavigate()
+  const item3 = getMenuTree(asyncRoutes)
+  const handleMenuClick = function (e) {
+    navigate(e.key)
+  }
   return (
     <>
-    <Menu style={menuStyle}  mode="inline"  defaultSelectedKeys={['1']} defaultOpenKeys={['sub1']} items={items2} />
+    <Menu style={menuStyle}  mode="inline"  defaultSelectedKeys={['1']} defaultOpenKeys={['sub1']} items={item3} onClick={handleMenuClick}/>
     </>
   )
 }

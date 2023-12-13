@@ -20,6 +20,7 @@
     :global{
       .ant-menu-submenu-selected{
         .ant-menu-submenu-title{
+        font-family: HYZY;
         color: #fff;
         }
       }
@@ -28,6 +29,9 @@
       }
       .ant-menu-item:not(.ant-menu-item-selected):hover{
         color: #fff;
+      }
+      .ant-menu-title-content{
+        font-family: HYZY;
       }
   }
   }
