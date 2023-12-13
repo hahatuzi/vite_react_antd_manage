@@ -1,0 +1,40 @@
+.login_container{
+  width: 100vw;
+  height: 100vh;
+  background-color: #01a79a;
+  // #96DED1
+  .form{
+    width: 350px;
+    height: 350px;
+    background: #ffffff2d;
+    border: 3px solid #ffffffe7;
+    box-shadow: 0 0 7px #ccc;
+    border-radius: 12px;
+    padding: 25px;
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    .title{
+      color: #fff;
+      font-size: 24px;
+      text-align: center;
+      letter-spacing: 8px;
+      margin-bottom: 15px;
+    }
+    :global{
+      .ant-form-item{
+        font-size: 16px;
+      }
+      .ant-btn-primary{
+        width: 100%;
+        font-size: 16px;
+        background-color: #01c1b2;
+      }
+      .ant-btn-primary:hover{
+        background-color: #01a79a;
+      }
+    }
+  }
+}

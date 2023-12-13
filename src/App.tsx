@@ -1,18 +1,19 @@
-import './App.scss'
-import { Routes,Route, useRoutes, Navigate } from 'react-router-dom'
-// import {useNavigate, useRoutes,useLocation } from 'react-router-dom'
+import {useNavigate, useRoutes,useLocation } from 'react-router-dom'
 // import {constantRoutes} from './router/index'
 // import routes from './router/config'
 import routes from './router/index'
-// import { message } from 'antd'
+import {useEffect } from 'react';
+import { message } from 'antd'
+import './App.scss'
 
+ 
 function BeforeRouterEnter() {
   const outlet = useRoutes(routes)
   // const token = localStorage.getItem('token')
   // const navigateTo = useNavigate()
-  // const location = useLocation()
-  //   if (!token) {
-  //   if (location.pathname === '/login') {
+  // const {pathname} = useLocation()
+  // if (token) {
+  //   if (pathname === '/login') {
   //     useEffect(() => {
   //       navigateTo('/home')
   //     },[])

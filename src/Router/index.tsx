@@ -4,7 +4,7 @@ import MainLayout from "@/layout"
 
 // eslint-disable-next-line react-refresh/only-export-components
 const Login = lazy(() => import('@/views/Login/index'))
-const Layout = lazy(() => import('@/views/Layout/index'))
+const NotFound = lazy(() => import('@/views/404'))
 const Home = lazy(() => import('@/views/Home/index'))
 const MenuManage = lazy(() => import('@/views/System/MenuManage'))
 const UserManage = lazy(() => import('@/views/System/UserManage'))
@@ -20,7 +20,8 @@ const withLoadingComponent = (comp:JSX.Element) => {
 }
 export const constantRoutes:Array<object> = [
   { path:"/",element:<MainLayout></MainLayout>, redirect: '/home', },
-  { path:"/layout",element:<Layout></Layout>},
+  { path:"/login",element:<Login></Login>},
+  { path:"/404",element:<NotFound></NotFound>},
 ]
 // 考虑到layout侧边栏不需要添加登录等路由模块，故分开两部分路由
 export const asyncRoutes:Array<object> = [
