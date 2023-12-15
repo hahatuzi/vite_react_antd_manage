@@ -29,8 +29,21 @@
       }
       .ant-btn-primary{
         width: 100%;
-        font-size: 16px;
+        font-size: 18px;
+        line-height: 18px;
         background-color: #01c1b2;
+        font-weight: bold;
+      }
+      .ant-checkbox-wrapper{
+        color: #fff;
+      }
+      .ant-checkbox-inner{
+        background-color: #01c1b2!important;
+        border-color: #01c1b2!important;
+      }
+      .ant-checkbox-inner:hover{
+        background-color: #01a79a!important;
+        border-color: #01a79a!important;
       }
       .ant-btn-primary:hover{
         background-color: #01a79a;

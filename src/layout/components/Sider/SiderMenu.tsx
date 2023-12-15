@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import { Menu} from 'antd'
 import {asyncRoutes} from '@/router/index'
 import { useNavigate } from 'react-router-dom'
@@ -50,9 +50,13 @@ const SiderMenu = function () {
   const handleMenuClick = function (e) {
     navigate(e.key)
   }
+  // 浏览器刷新时返回default页面路由
+  useEffect(() => {
+    navigate('/home')
+  },[])
   return (
     <>
-    <Menu style={menuStyle}  mode="inline"  defaultSelectedKeys={['1']} defaultOpenKeys={['sub1']} items={item3} onClick={handleMenuClick}/>
+    <Menu style={menuStyle}  mode="inline"  defaultSelectedKeys={['/home']} defaultOpenKeys={['sub1']} items={item3} onClick={handleMenuClick}/>
     </>
   )
 }
