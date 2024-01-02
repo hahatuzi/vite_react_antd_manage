@@ -1,5 +1,6 @@
 import React from 'react';
 import { Layout} from 'antd';
+import {Navigate} from 'react-router-dom'
 
 import MainHeader from './components/Header';
 import MainSider from './components/Sider';
@@ -12,6 +13,12 @@ const layoutStyle: React.CSSProperties = {
 };
 
 const MainLayout: React.FC  = function () {
+  // token跳转路由
+  const token = localStorage.getItem('token')
+  if (!token) {
+    return <Navigate to="/login"></Navigate >
+  }
+
   return (
     <Layout style={layoutStyle}>
       <MainSider></MainSider>

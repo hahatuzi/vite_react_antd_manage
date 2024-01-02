@@ -6,7 +6,7 @@
   .form{
     width: 350px;
     height: 350px;
-    background: #ffffff2d;
+    background: #cccccc2b;
     border: 3px solid #ffffffe7;
     box-shadow: 0 0 7px #ccc;
     border-radius: 12px;
@@ -34,6 +34,9 @@
         background-color: #01c1b2;
         font-weight: bold;
       }
+      .ant-btn-primary:hover{
+        background-color: #01a79a;
+      }
       .ant-checkbox-wrapper{
         color: #fff;
       }
@@ -45,8 +48,8 @@
         background-color: #01a79a!important;
         border-color: #01a79a!important;
       }
-      .ant-btn-primary:hover{
-        background-color: #01a79a;
+      .ant-input-affix-wrapper:hover{
+        border-color: #01a79a!important;
       }
     }
   }

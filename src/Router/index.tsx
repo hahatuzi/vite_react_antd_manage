@@ -1,4 +1,3 @@
-import {Navigate} from 'react-router-dom'
 import  {lazy, Suspense} from 'react'
 import MainLayout from "@/layout"
 
@@ -28,8 +27,9 @@ export const asyncRoutes:Array<object> = [
   { path:"/home",
     name:"home",
     element:<MainLayout></MainLayout>,
+    // meta:{icon:'AppstoreOutlined'},
     children:[
-      { path:"/home",name:"home",element:withLoadingComponent(<Home></Home>) ,label:'首页',meta:{icon:'UserOutlined'} }
+      { path:"/home",name:"home",element:withLoadingComponent(<Home></Home>) ,label:'首页',meta:{icon:'AppstoreOutlined'} }
     ]
   },
   {
