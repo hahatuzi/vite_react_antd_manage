@@ -3,7 +3,7 @@ import {useNavigate, useRoutes,useLocation } from 'react-router-dom'
 // import routes from './router/config'
 import routes from './router/index'
 import './App.scss'
-import { BrowserRouter,Routes,Route, RouterProvider  } from "react-router-dom"
+import { BrowserRouter,Routes,Route, RouterProvider, Navigate  } from "react-router-dom"
 
 import  {lazy, Suspense} from 'react'
 import MainLayout from "@/layout"

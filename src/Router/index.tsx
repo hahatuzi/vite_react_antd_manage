@@ -18,9 +18,8 @@ const withLoadingComponent = (comp:JSX.Element) => {
   return <Suspense fallback={<div>loading...</div>}>{comp}</Suspense>
 }
 export const constantRoutes:Array<object> = [
-  { path:"/",element:<MainLayout></MainLayout>, redirect: '/home', },
-  { path:"/login",element:<Login></Login>},
-  { path:"/404",element:<NotFound></NotFound>},
+  { path:"/*",element:<MainLayout></MainLayout>, redirect: '/home', },
+  { path:"*",element:<NotFound></NotFound>},
 ]
 // 考虑到layout侧边栏不需要添加登录等路由模块，故分开两部分路由
 export const asyncRoutes:Array<object> = [

@@ -2,7 +2,7 @@ import { Button, Checkbox, Form, Input } from 'antd';
 import { UserOutlined, LockOutlined, EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
 import styles from './index.module.scss'
 import { useNavigate, Navigate } from 'react-router-dom';
-
+import { reqLogin } from "@/api/index.ts";
 
 type FieldType = {
   username?: string;
@@ -17,15 +17,19 @@ const Login = function () {
   }
 
   const onFinish = (values:object) => {
-  localStorage.setItem('token', 'fgeshekesj===')
-  console.log('Success:', values);
+    reqLogin(values)
+    localStorage.setItem('token', 'fgeshekesj===')
+    // const dispatch = useDispatch()
+// dispatch(Login({name:'', password:''}))
+    console.log('Success:', values);
+    navigate('/home')
   };
   
   const navigate = useNavigate()
   const onFinishFailed = (errorInfo: object) => {
-    localStorage.setItem('token', 'fgeshekesj===')
+    // localStorage.setItem('token', 'fgeshekesj===')
     console.log('Failed:', errorInfo);
-    navigate('/')
+    // navigate('/')
   };
   return(
     <div className={styles['login_container']}>
